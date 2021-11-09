@@ -1,13 +1,14 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * @author  awfullot <752605040@qq.com>
+ * 字符处理助手类
+ * @author awfullot <752605040@qq.com>
  */
 
-namespace Utils\Helper;
+namespace awfullot\utils;
 
 
-class Str
+class StrHelper
 {
     /**
      * 生成唯一数字

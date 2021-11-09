@@ -12,8 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Utils\\Helper\\": "src/helper/",
-            "Utils\\Example\\": "src/example/"
+            "awfullot\\utils\\": "src/"
         }
     }
 }
