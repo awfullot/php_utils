@@ -4,10 +4,10 @@
  * @author  awfullot <752605040@qq.com>
  */
 
-namespace Charles\Utils;
+namespace Utils\Helper;
 
 
-class StrHelper
+class Str
 {
     /**
      * 生成唯一数字
