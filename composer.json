@@ -1,0 +1,13 @@
+{
+    "name": "awfullot/php_utils",
+    "description": "工具包",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "awfullot",
+            "email": "752605040@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
