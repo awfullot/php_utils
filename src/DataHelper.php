@@ -6,18 +6,17 @@ namespace awfullot\utils;
  * 数据处理助手类
  * @author awfullot <752605040@qq.com>
  */
-
 class DataHelper
 {
 
     /**
      * 对象数据转数组数据
-     * @param $object  //对象数据
+     * @param $object //对象数据
      * @return array
      */
     public function object2array($object): array
     {
-        if(!is_object($object)) {
+        if (!is_object($object)) {
             return $object;
         }
         $array = array();
@@ -32,22 +31,20 @@ class DataHelper
      * @param $params
      * @return bool|string
      */
-    public static function data2Xml( $params )
+    public static function data2Xml($params)
     {
-        if(!is_array($params)|| count($params) <= 0)
-        {
+        if (!is_array($params) || count($params) <= 0) {
             return false;
         }
         $xml = "<xml>";
-        foreach ($params as $key=>$val)
-        {
-            if (is_numeric($val)){
-                $xml.="<".$key.">".$val."</".$key.">";
-            }else{
-                $xml.="<".$key."><![CDATA[".$val."]]></".$key.">";
+        foreach ($params as $key => $val) {
+            if (is_numeric($val)) {
+                $xml .= "<" . $key . ">" . $val . "</" . $key . ">";
+            } else {
+                $xml .= "<" . $key . "><![CDATA[" . $val . "]]></" . $key . ">";
             }
         }
-        $xml.="</xml>";
+        $xml .= "</xml>";
         return $xml;
     }
 
@@ -58,7 +55,7 @@ class DataHelper
      */
     public static function xml2Data($xml): bool
     {
-        if(!$xml){
+        if (!$xml) {
             return false;
         }
         //禁止引用外部xml实体
@@ -75,7 +72,7 @@ class DataHelper
      * @param false $IS_CLI
      * @return string|void
      */
-    public static function dump($param, $echo = true, $label = null, $flags = ENT_SUBSTITUTE, $IS_CLI=false): string
+    public static function dump($param, $echo = true, $label = null, $flags = ENT_SUBSTITUTE, $IS_CLI = false): string
     {
         $label = (null === $label) ? '' : rtrim($label) . ':';
         ob_start();

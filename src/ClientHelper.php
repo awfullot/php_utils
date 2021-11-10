@@ -6,7 +6,6 @@ namespace awfullot\utils;
  * 客户端助手类
  * @author awfullot <752605040@qq.com>
  */
-
 class ClientHelper
 {
     /**
@@ -43,7 +42,7 @@ class ClientHelper
             $os = 'Linux';
             if (strpos($agent, 'Android') !== false) {
                 preg_match("/(?<=Android )[\d\.]{1,}/", $agent, $version);
-                $os = 'Android '.$version[0];
+                $os = 'Android ' . $version[0];
             }
         } else if (preg_match('/unix/i', $agent)) {
             $os = 'Unix';
@@ -55,11 +54,11 @@ class ClientHelper
             $os = 'Mac';
             if (strpos($agent, 'iPhone') !== false) {
                 preg_match("/(?<=CPU iPhone OS )[\d\_]{1,}/", $agent, $version);
-                $os = 'iPhone '.str_replace('_', '.', $version[0]);
+                $os = 'iPhone ' . str_replace('_', '.', $version[0]);
             }
             if (strpos($agent, 'iPad') !== false) {
                 preg_match("/(?<=CPU OS )[\d\_]{1,}/", $agent, $version);
-                $os = 'iPad '.str_replace('_', '.', $version[0]);
+                $os = 'iPad ' . str_replace('_', '.', $version[0]);
             }
         } else if (preg_match('/PowerPC/i', $agent)) {
             $os = 'PowerPC';
@@ -142,7 +141,8 @@ class ClientHelper
      * 获取客户端IP
      * @return array|false|mixed|string
      */
-    public static function getClientIp() {
+    public static function getClientIp()
+    {
         if (isset($_SERVER)) {
             if (isset($_SERVER ['HTTP_X_FORWARDED_FOR'])) {
                 $aIps = explode(',', $_SERVER ['HTTP_X_FORWARDED_FOR']);
@@ -182,7 +182,7 @@ class ClientHelper
     {
         $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
         $type = 'other';
-        if (strpos($agent, 'iphone') || strpos($agent, 'ipad')){
+        if (strpos($agent, 'iphone') || strpos($agent, 'ipad')) {
             $type = 'ios';
         }
         if (strpos($agent, 'android')) {
